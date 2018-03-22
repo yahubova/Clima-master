@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ub6-VY-GcI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Weather View Controller-->
+        <!--title-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="WeatherViewController" customModule="Clima" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,7 +31,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="th1-Kr-XgW" userLabel="Change City Button">
-                                <rect key="frame" x="309" y="20" width="50" height="50"/>
+                                <rect key="frame" x="309" y="64" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="p6a-Rh-5P9"/>
                                     <constraint firstAttribute="height" constant="50" id="qRJ-AK-fNV"/>
@@ -96,6 +96,13 @@
                             <constraint firstAttribute="trailing" secondItem="VNR-V6-HMc" secondAttribute="trailing" id="nWN-M1-3ds"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="title" id="kWv-3q-lBX">
+                        <barButtonItem key="rightBarButtonItem" title="open" id="Mvu-AM-DYg">
+                            <connections>
+                                <segue destination="P1Y-dL-zMM" kind="show" id="Wwk-k9-mqA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cityLabel" destination="Ssc-Cu-XmK" id="8PV-i3-tg0"/>
                         <outlet property="temperatureLabel" destination="AT7-It-Fyf" id="aNl-QI-DaP"/>
@@ -104,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17" y="259"/>
+            <point key="canvasLocation" x="719" y="259"/>
         </scene>
         <!--Change City View Controller-->
         <scene sceneID="9fV-L8-Kpp">
@@ -189,7 +196,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wa8-oH-wtf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="833.5" y="259.5"/>
+            <point key="canvasLocation" x="1444" y="259"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="y1I-PJ-B7O">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ub6-VY-GcI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SQU-Lu-KKv">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="ibj-3f-lro"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zj5-sH-wAv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="16" y="258.17091454272867"/>
         </scene>
     </scenes>
     <resources>
@@ -198,4 +223,7 @@
         <image name="left" width="32" height="32"/>
         <image name="switch" width="64" height="64"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Wwk-k9-mqA"/>
+    </inferredMetricsTieBreakers>
 </document>
